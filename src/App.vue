@@ -55,9 +55,9 @@ body {
   background-color: rgba(0, 0, 0, 0.25);
   background-image: url("./assets/logo.png");
   background-repeat: no-repeat;
-  // background-attachment: fixed;
+  background-attachment: fixed;
   background-size: 40%;
-  background-position: 1rem calc(80vh - 56px);
+  background-position: left 1rem bottom 44px;
 }
 #app {
   min-height: 100vh;
