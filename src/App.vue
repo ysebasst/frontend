@@ -1,30 +1,72 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <Navbar />
+  <div id="router-view">
+    <router-view />
   </div>
-  <router-view/>
+  <Footer />
 </template>
 
+<script>
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+export default {
+  components: {
+    Navbar,
+    Footer,
+  },
+};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
+
+html {
+  box-sizing: border-box;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: inherit;
+}
+:root {
+  --border-light: 1px solid rgba(255, 255, 255, 0.5);
+  --bg-dark: rgba(77, 77, 77, 1);
+  --gr-white1: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+  --gr-white2: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0)
+  );
+  --gr-white3: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.25)
+  );
+}
+body {
+  background-color: rgba(0, 0, 0, 0.25);
+  background-image: url("./assets/logo.png");
+  background-repeat: no-repeat;
+  // background-attachment: fixed;
+  background-size: 40%;
+  background-position: 1rem calc(80vh - 56px);
+}
+#app {
+  min-height: 100vh;
+}
+#router-view {
+  min-height: calc(100vh - 100px);
+}
+.container {
+  margin: 0 auto;
+  max-width: 1110px;
 }
 </style>
